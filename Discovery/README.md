@@ -1,3 +1,4 @@
 # Discovery
 
-Place videos/guides you may find helpful here
+Minuts.md = A summary of the first meeting with Clients
+    Present: Hunter, Chase, Nathaniel, Luke, Trey Gourley, Linc Mitchell, Dave Jones
