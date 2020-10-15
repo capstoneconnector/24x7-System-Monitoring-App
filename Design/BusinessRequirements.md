@@ -1,4 +1,4 @@
-#Business Requirements
+# Business Requirements
 
 -	BR1 - Ensure Product Health/Uptime - Ensuring that Accutech’s other applications are healthy and running is an important feature of this software. With the software constantly checking the status of the other applications and alerting an admin if there is a problem, allows for faster response to any potential problem. That way the other applications can get back on track doing what they’re supposed to do and that they are healthy.
 
