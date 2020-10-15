@@ -1,6 +1,6 @@
 # Requirements
 
-##Functional Requirements
+## Functional Requirements
 
 -	FR1 - 100% Automated - HIGH - BR1
 
@@ -12,7 +12,7 @@
 
 -	FR5 - Automatic alerts - HIGH - BR1
 
-##Non-Functional Requirements
+## Non-Functional Requirements
 
 -	NR1 - Use C#.NET - HIGH - BR3
 
