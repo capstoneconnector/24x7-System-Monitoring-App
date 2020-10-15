@@ -1,21 +1,7 @@
-# Business Requirements
+#Business Requirements
 
-## BR 1 - 100% Automated
+-	BR1 - Ensure Product Health/Uptime - Ensuring that Accutech’s other applications are healthy and running is an important feature of this software. With the software constantly checking the status of the other applications and alerting an admin if there is a problem, allows for faster response to any potential problem. That way the other applications can get back on track doing what they’re supposed to do and that they are healthy.
 
-This first requirement is extremely important becuase it is the foundation of this project. We want to require at least possible user maintanance from the client and ensure 24/7 updtime/no crashes for the web app.
+-	BR2 - 24/7 Monitoring (Especially Night time) - 24/7 monitoring will help in causing less issues when starting off the work day at 8 am. Using a system that will pull information for errors and send them to the Command Console (BR3) there will be a constant view on common issues that go wrong. Instead of having a person watching for these issues manually, there can be automation set in place to save on time. Getting alerts for when things critically go wrong would be a lot more helpful than walking in on a new work day and finding the system went entirely down.
 
-## BR 2 - Centralized Command Console
-
-This is the core area where all functions will be triggered/occur. We need to make this clean and useable so that Accutech can use is as well as a potential third party monitor service which was mentioned in a meeting. I imagine this will have a varitey of commands and will be especially useful for custom checks.
-
-## BR 3 - Console to PULL status details from applications
-
-This is important because the whole point of the program is to monitor applications and by giving a command to see the status of all the applications at once, it makes it extremely ease to see the general health of everything and see if any work or corrections are needed.
-
-## BR 4 - Linked/downstream impacts identified
-
-This is a major priority because the last thing we want is for a program to crash and fail and not inform the users of such. We need to find a healthy balance of how often to check, how many failures can happen, and what the potential resolution could be.
-
-## BR 5 - Automatic alerts
-
-Primiary focus and end goal of this project, we need to alert the client and specific users if an error occurs with a product. This needs to be customizable to whatever the needs may be. This is important because the whole purpose of the monitoring system is to be on the watch for issues and then make sure the correct people are aware of what is happening and potentially require a solution or acknowledgement that shows that it is being looked into/is made aware of.
+-	BR3 - Centralized Command Console - A centralized console to be viewed if needed to check statuses or milestones for applications. This information will be pulled from each tracked application automatically without needing manual requests.
