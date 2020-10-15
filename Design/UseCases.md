@@ -1,12 +1,12 @@
-#Use Cases
+# Use Cases
 
-##Actors
+## Actors
 
 -	Accutech Admins - The admins will be the primary users for this product as they will moderate the system and respond to any warnings it may provide
     
 -	Potential Third Party - While Accutech may be the primary user and owner of the product, they have mentioned that if the need arises, they may hire an external team to use the software and help respond with any issues that appear
 
-##Use Cases
+## Use Cases
 
 -	UC1 - General System Health - Overall, the software is meant to generally monitor the health of the products and give a quick glance over view as opposed to looking at each one individually. The actor for this would be the admins most likely and the flow would simply be going to the page (most likely with correct credentials) and looking at the dashboard. This is tied to BR1 (Ensure Product Health/Uptime).
     
