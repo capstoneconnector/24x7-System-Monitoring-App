@@ -1,22 +1,22 @@
 # Domain Model
 
--     Users
+-   User
     -    The Users table is vital because it contains the users that will be able to login to the monitoring software and check on product health. It is important to note that users are not the only ones that will be notified when a product failure happens, thus leading to the contacts table.
--    HealthChecks
+-   HealthChecks
     -    The HealthChecks table is the core feature of this product and will contain the generated scheduled checks that will be done on the programs. It also contains the API calls that will be run.
--    Roles
+-   Roles
     -    Stores roles from information of users.
--    Schedule
+-   Schedule
     -    Schedule stores information about different scheduled health checks. It connects to a table with all the different groups of health checks.
--    Responses
+-   Responses
     -    Response is used to store all different responses that we would need to alert to someone. Responses also connects a contact and the table with all the groups.
--     Contacts
+-   Contacts
     -    Contact is used to store all the people that need to be or will be contacted if something goes wrong. Contacts connects to a table with all the groups that contact is in as well as responses that the contact would receive.
--     ContactInfos
+-   ContactInfos
     -    Contact info will hold information for contacting people from health checks. Once a response is given, the users that will need to be contacted will have their info found, such as email or text info. 
--    ContactGroups
+-   ContactGroups
     -    Contact groups deal with all the different kinds of groupings that a contact can have. For example a manager or developer. These will help in notifying only certain groups of people to contact. 
--    Triggers
+-   Triggers
     -    Can parse conditions from different variables and can execute different code based on the variables. 
--    Variables
+-   Variables
     -    Constraints used for the different levels of triggers. 
