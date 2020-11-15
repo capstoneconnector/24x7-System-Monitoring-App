@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemMonitoring", "24x7System-Monitoring\SystemMonitoring.csproj", "{407519EF-FC81-4A00-8BBC-2AA73DB91E78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B295311B-A392-4F4A-8173-AF5C3A133D97}"
+	ProjectSection(SolutionItems) = preProject
+		.filenesting.json = .filenesting.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemMonitoring.Backend", "SystemMonitoring.Backend\SystemMonitoring.Backend.csproj", "{63A8717C-6AEE-449B-AEDD-59D7E00B04D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{407519EF-FC81-4A00-8BBC-2AA73DB91E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407519EF-FC81-4A00-8BBC-2AA73DB91E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407519EF-FC81-4A00-8BBC-2AA73DB91E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407519EF-FC81-4A00-8BBC-2AA73DB91E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A8717C-6AEE-449B-AEDD-59D7E00B04D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A8717C-6AEE-449B-AEDD-59D7E00B04D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A8717C-6AEE-449B-AEDD-59D7E00B04D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A8717C-6AEE-449B-AEDD-59D7E00B04D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52D1F82-A259-49B9-8B2A-DD9278B47920}
+	EndGlobalSection
+EndGlobal

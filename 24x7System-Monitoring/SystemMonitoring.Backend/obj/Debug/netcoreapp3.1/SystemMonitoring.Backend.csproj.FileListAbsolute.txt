@@ -1,0 +1,9 @@
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.deps.json
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.csprojAssemblyReference.cache
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.AssemblyInfoInputs.cache
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.AssemblyInfo.cs
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.csproj.CoreCompileInputs.cache
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
+C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb

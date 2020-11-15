@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "LF6E85Lhsp0Tz5K5l4QhFW0qu3Po/n+E6JQ4QIhODUXhrVtkQ/9Ph6X0XOyrKBDuLQ8dhvI0zZFC71/qsbZnKA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hunte\\Documents\\GitHub\\24x7-System-Monitoring-App\\24x7System-Monitoring\\24x7System-MonitoringBackEnd\\SystemMonitoring.Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hunte\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hunte\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
