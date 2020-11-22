@@ -1,9 +1,0 @@
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\bin\Debug\netstandard2.0\SystemMonitoring.Backend.deps.json
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\bin\Debug\netstandard2.0\SystemMonitoring.Backend.dll
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\bin\Debug\netstandard2.0\SystemMonitoring.Backend.pdb
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\obj\Debug\netstandard2.0\SystemMonitoring.Backend.csprojAssemblyReference.cache
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\obj\Debug\netstandard2.0\SystemMonitoring.Backend.AssemblyInfoInputs.cache
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\obj\Debug\netstandard2.0\SystemMonitoring.Backend.AssemblyInfo.cs
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\obj\Debug\netstandard2.0\SystemMonitoring.Backend.csproj.CoreCompileInputs.cache
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\obj\Debug\netstandard2.0\SystemMonitoring.Backend.dll
-C:\Users\hunte\Documents\GitHub\24x7-System-Monitoring-App\24x7System-Monitoring\24x7System-MonitoringBackEnd\obj\Debug\netstandard2.0\SystemMonitoring.Backend.pdb
