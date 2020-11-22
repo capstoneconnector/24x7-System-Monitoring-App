@@ -1,0 +1,33 @@
+﻿@model YahooApiCallData 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 id="updateMe">REPLACE ME</h1>
+</div>
+
+<script>
+
+    var returnedData;
+
+    $(document).ready(function () {
+        $.ajax({
+            url: " https://api.covidtracking.com/v1/us/current.json",
+            type: "GET",
+            contenttype: "application/json; charset=utf-8",
+            data: { show: true },
+            success: function (data) {
+                returnedData = data;
+            }
+        }).done(function () {
+            $("#updateMe").text(returnedData[0].date);
+            
+        })
+    });
+
+
+
+</script>
