@@ -15,7 +15,7 @@ An in-house developed dashboard for monitoring projects and ensuring quality by 
 
 ## Links
 
-UPDATE WITH LINKS TO CERTAIN FOLDERS (Description, team/mentor/client partner meeting munutes)
+Iteration 2 - https://github.com/Hjwallace/24x7-System-Monitoring-App/projects/3
 
 ## Code Repositories
 
