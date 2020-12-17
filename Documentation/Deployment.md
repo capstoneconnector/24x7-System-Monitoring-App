@@ -10,4 +10,4 @@
 
 - How to Determine Source of Errors: Within Visual Studio, utilize debugging capabilities in order to find the file(s) that may be causing difficulties and assess from there
 
-- Most Critical Pieces: Server Connection, Front End CSS, API connection/endpoint
+- Most Critical Pieces: Server Connection, Front End CSS, API connection/endpoint, Tests Passing

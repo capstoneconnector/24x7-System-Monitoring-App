@@ -31,3 +31,15 @@ C:\Users\Nathaniel\source\repos\bsu.247monitoring\SystemMonitoring\SystemMonitor
 C:\Users\Nathaniel\source\repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
 C:\Users\Nathaniel\source\repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
 C:\Users\Nathaniel\source\repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.genruntimeconfig.cache
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.deps.json
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.runtimeconfig.json
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.runtimeconfig.dev.json
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.csprojAssemblyReference.cache
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.AssemblyInfoInputs.cache
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.AssemblyInfo.cs
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.csproj.CoreCompileInputs.cache
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
+C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.genruntimeconfig.cache

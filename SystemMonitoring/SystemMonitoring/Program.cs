@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,7 @@ namespace SystemMonitoring
                 }
             }
 
-            host.Run();
-
-
+            host.Run();            
         }
 
         private static void CreateDbIfNotExists(IHost host)

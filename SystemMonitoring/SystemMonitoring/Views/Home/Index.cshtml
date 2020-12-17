@@ -1,13 +1,65 @@
-﻿@model YahooApiCallData 
+﻿@model SystemMonitoring.ViewModels.HomeIndexViewModel
 @{
     ViewData["Title"] = "Home Page";
+
+
 }
 
+
+<!--Container for task columns-->
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <h1 id="updateMe">REPLACE ME</h1>
-</div>
+
+
+    <div class="card" style="width: 28rem; display: inline-block;">
+        <div class="card-header">
+            <h1 style="display:inline">Scheduled Tasks</h1>
+            <button type="button" class="btn btn-secondary" style="display:inline;margin-left:8px;margin-bottom:15px;" id="addTask">+</button>
+
+            <div id="popup" style="display:none;">
+                <form id="taskForm">
+
+                    <label for="disName"> Display Name for Task </label><br />
+                    <input type="text" name="disName" /><br />
+
+                    <label for="taskRepeat"> How often would you like this task to repeat? </label><br />
+                    <input type="radio" id="repeatHourly" name="taskRepeat" value="hourly">
+                    <label>Hourly</label>
+                    <input type="radio" id="repeatDaily" name="taskRepeat" value="daily">
+                    <label>Daily</label>
+                    <input type="radio" id="repeatWeekly" name="taskRepeat" value="weekly">
+                    <label>Weekly</label>
+                    <input type="radio" id="repeatMonthly" name="taskRepeat" value="monthly">
+                    <label>Monthly</label>
+
+                    <label for="taskTime">What time would you like the task to be ran?</label> <br />
+                    <input type="radio" id="midnight" name="taskTime" value="midnight">
+                    <label>Midnight</label>
+                    <input type="radio" id="noon" name="taskTime" value="noon">
+                    <label>Noon</label>
+                    <input type="radio" id="sixAm" name="taskTime" value="sixAm">
+                    <label>6am</label>
+                    <input type="radio" id="sixPm" name="taskTime" value="sixPm">
+                    <label>6pm</label> <br />
+
+                    <button type="submit" id="submitNewTask" form="taskForm" class="btn btn-primary">Save New Task</button>
+
+                </form>
+            </div>
+
+        </div>
+        <ul class="list-group list-group-flush" id="taskList">
+
+            @foreach (var jobPanel in Model.JobResults)
+            {
+                //<h1>@jobPanel.Id</h1>
+                //<h1>@jobPanel.TotalJobs</h1>
+                //<h1>@jobPanel.TotalFailedJobs</h1>
+            <li class="list-group-item">Id: @jobPanel.Id <br /> TotalJobs : @jobPanel.TotalJobs <br /> TotalFailedJobs: @jobPanel.TotalFailedJobs</li>
+            }
+        </ul>
+    </div>
+
+</div> <!--End of card container-->
 
 <script>
 
@@ -23,10 +75,22 @@
                 returnedData = data;
             }
         }).done(function () {
-            $("#updateMe").text(returnedData[0].date);
-            
+            $("#updateMe").text("API Test: " + returnedData[0].date);
+
         })
     });
+
+    $('#addTask').click(function () {
+        $('#popup').toggle();
+    });
+
+    $('#submitNewTask').click(function () {
+        $('#popup').toggle();
+
+        $("#taskList").append('<li class="list-group-item">Tasks 3</li>'); //This is a proof of concept, will need to be done in $(document) before page is loaded.
+
+    });
+
 
 
 

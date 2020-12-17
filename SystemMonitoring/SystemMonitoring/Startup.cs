@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemMonitoring.Backend.Data;
+using SystemMonitoring.Backend.Factories;
+using SystemMonitoring.Backend.Interfaces;
+using SystemMonitoring.Backend.Jobs;
 
 namespace SystemMonitoring
 {
@@ -32,8 +35,12 @@ namespace SystemMonitoring
 
             services.AddHangfire(config =>
                 config.UsePostgreSqlStorage(Configuration.GetConnectionString("DefaultConnection")));
-
+            
             services.AddControllersWithViews();
+
+            services.AddHttpClient();
+
+            services.AddTransient<IApiJobFactory, ApiJobFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +56,8 @@ namespace SystemMonitoring
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -59,8 +68,10 @@ namespace SystemMonitoring
             app.UseHangfireServer();
             app.UseHangfireDashboard();
 
-            RecurringJob.AddOrUpdate(() => Console.Write("Easy!"), "0/30 * * ? * *");
-            
+            //RecurringJob.AddOrUpdate(() => Console.Write("Easy!"), "0/30 * * ? * *");
+
+
+
 
             app.UseEndpoints(endpoints =>
             {
