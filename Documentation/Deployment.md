@@ -12,7 +12,3 @@ How to Determine Source of Errors: Within Visual Studio, utilize debugging capab
 
 Most Critical Pieces: Server Connection, Database Connection, Front End CSS, API connection/endpoint
 
-<<<<<<< HEAD
-- Most Critical Pieces: Server Connection, Front End CSS, API connection/endpoint, Tests Passing
-=======
->>>>>>> f2aec7a0d24cf9f23082816b6270dcfb973bfed3
