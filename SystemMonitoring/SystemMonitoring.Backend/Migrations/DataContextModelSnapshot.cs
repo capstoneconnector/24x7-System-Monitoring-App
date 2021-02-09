@@ -19,28 +19,43 @@ namespace SystemMonitoring.Backend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("SystemMonitoring.Backend.Models.JobResult", b =>
+            modelBuilder.Entity("SystemMonitoring.Backend.Models.CurrentJobResult", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
+                    b.Property<int>("Awaiting")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("TotalFailedJobs")
+                    b.Property<int>("Deleted")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalJobs")
+                    b.Property<int>("Enqueued")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalSuccessfulJobs")
+                    b.Property<int>("Failed")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("JobType")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Processing")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Scheduled")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Succeeded")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.ToTable("JobResults");
+                    b.ToTable("CurrentJobResults");
                 });
 
             modelBuilder.Entity("SystemMonitoring.Backend.Models.TestForHangfire", b =>
@@ -59,6 +74,33 @@ namespace SystemMonitoring.Backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TestForHangfire");
+                });
+
+            modelBuilder.Entity("SystemMonitoring.Backend.Models.TotalJobResult", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("JobType")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalFailedJobs")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalJobs")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalSuccessfulJobs")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TotalJobResults");
                 });
 #pragma warning restore 612, 618
         }

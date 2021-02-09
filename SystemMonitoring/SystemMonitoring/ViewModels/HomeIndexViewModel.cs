@@ -8,7 +8,7 @@ namespace SystemMonitoring.ViewModels
 {
     public class HomeIndexViewModel
     {
-        public IEnumerable<JobResult> JobResults { get; set; } 
-        
+        public IEnumerable<TotalJobResult> TotalJobResults { get; set; } 
+        public IEnumerable<CurrentJobResult> CurrentJobResult { get; set; }
     }
 }

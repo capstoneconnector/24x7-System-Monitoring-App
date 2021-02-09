@@ -14,7 +14,8 @@ namespace SystemMonitoring.Backend.Data
         }
 
         public DbSet<TestForHangfire> TestForHangFire { get; set; }
-        public DbSet<JobResult> JobResults { get; set; }
+        public DbSet<TotalJobResult> TotalJobResults { get; set; }
+        public DbSet<CurrentJobResult> CurrentJobResults { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

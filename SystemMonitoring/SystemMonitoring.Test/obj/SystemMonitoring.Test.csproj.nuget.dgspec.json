@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj": {}
+    "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
+    "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
+        "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
         "projectName": "SystemMonitoring.Backend",
-        "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
+        "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
         "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\obj\\",
+        "outputPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -100,18 +100,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj": {
+    "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj",
+        "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj",
         "projectName": "SystemMonitoring.Test",
-        "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj",
+        "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\SystemMonitoring.Test.csproj",
         "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\obj\\",
+        "outputPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,11 +128,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
-                "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj"
+              "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
+                "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj"
               },
-              "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj": {
-                "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj"
+              "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj": {
+                "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj"
               }
             }
           }
@@ -190,18 +190,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj": {
+    "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
+        "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
         "projectName": "SystemMonitoring",
-        "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
+        "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
         "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\obj\\",
+        "outputPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -218,8 +218,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
-                "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj"
+              "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
+                "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj"
               }
             }
           }
@@ -313,7 +313,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

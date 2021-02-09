@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemMonitoring.Backend.Data;
+using SystemMonitoring.Backend.Enumeration;
 using SystemMonitoring.Backend.Factories;
 using SystemMonitoring.Backend.Interfaces;
 using SystemMonitoring.Backend.Jobs;
@@ -26,13 +27,9 @@ namespace SystemMonitoring.Test
             DataContext dcon = new DataContext(dbOption);
             var endpoint = "https://api.accutechdataexchange.com/api/Hangfire/TotalJobs?date=12/15/2020";
             ApiJobFactory jobFact = new ApiJobFactory(dcon);
-            var api_job = jobFact.CreateJob(endpoint);
-            Assert.IsTrue(api_job is ApiJob);
+            var api_job = jobFact.CreateJob(endpoint, JobType.TotalJobs);
+            Assert.IsTrue(api_job is TotalApiJob);
             Assert.IsNotNull(api_job);
         }
-
-
-
-
     }
 }

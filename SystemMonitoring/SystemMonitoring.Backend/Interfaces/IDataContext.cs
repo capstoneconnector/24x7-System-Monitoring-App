@@ -8,6 +8,6 @@ namespace SystemMonitoring.Backend.Interfaces
 {
     public interface IDataContext
     {
-        public DbSet<JobResult> JobResults { get; set; }
+        public DbSet<TotalJobResult> TotalJobResults { get; set; }
     }
 }

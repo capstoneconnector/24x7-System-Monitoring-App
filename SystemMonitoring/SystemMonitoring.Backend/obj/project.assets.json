@@ -6198,11 +6198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
+      "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
       "projectName": "SystemMonitoring.Backend",
-      "projectPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
+      "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj",
       "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hunte\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\obj\\",
+      "outputPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6291,7 +6291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

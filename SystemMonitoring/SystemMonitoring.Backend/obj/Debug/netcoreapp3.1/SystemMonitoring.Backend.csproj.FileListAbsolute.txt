@@ -43,3 +43,15 @@ C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.
 C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
 C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
 C:\Users\chase\Source\Repos\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.genruntimeconfig.cache
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.deps.json
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.runtimeconfig.json
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.runtimeconfig.dev.json
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\bin\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.csprojAssemblyReference.cache
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.AssemblyInfoInputs.cache
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.AssemblyInfo.cs
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.csproj.CoreCompileInputs.cache
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.dll
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.pdb
+C:\Users\hunte\OneDrive\Desktop\bsu.247monitoring\SystemMonitoring\SystemMonitoring.Backend\obj\Debug\netcoreapp3.1\SystemMonitoring.Backend.genruntimeconfig.cache

@@ -13,6 +13,7 @@ using Npgsql;
 using SystemMonitoring.Backend.Models;
 using SystemMonitoring.ViewModels;
 using SystemMonitoring.Backend.Data;
+using SystemMonitoring.Backend.Enumeration;
 
 namespace SystemMonitoring.Controllers
 {
@@ -31,21 +32,57 @@ namespace SystemMonitoring.Controllers
 
         public IActionResult Index()
         {
-            RecurringJob.AddOrUpdate(() => HangfireMethod(), "0/30 * * ? * *");
+            RecurringJob.AddOrUpdate(() => TotalJobsCall(JobType.TotalJobs), "0/30 * * ? * *");
 
             //var jobResults = _dataContext.JobResults.Where(x => x.TotalFailedJobs>0);
 
-            var jobResults = _dataContext.JobResults.Skip(Math.Max(0, _dataContext.JobResults.Count() - 5));
+            var totalJobResults = _dataContext.TotalJobResults.Skip(Math.Max(0, _dataContext.TotalJobResults.Count() - 5));
+            var currentJobResults = _dataContext.CurrentJobResults.Skip(Math.Max(0, _dataContext.CurrentJobResults.Count() - 5));
 
             var viewModel = new HomeIndexViewModel
             {
-                JobResults = jobResults,
+                TotalJobResults = totalJobResults,
+                CurrentJobResult = currentJobResults,
+
             };
 
             return View(viewModel);
         }
 
-        public async Task HangfireMethod()
+
+        //IDEA
+        //Each method is a seperate job. The hangfire method below is purely made to get the api call for accutech data
+        //If we make several methods, we just have a flag that runs in the index to see what job should be add. Index is ran on open so it'll always add that one job
+        //There are only a few api calls they will want, we just have to make a method for each one
+
+        //WORRY
+        //Do we need to reload every job the program is opened?
+        //  -   Does this matter since this is a website?
+
+        //var job = _apiJobFactory.CreateJob();//string endpoint goes in here)
+
+        //Job ID - What kind of job is being done
+        //TJ - Total Jobs - //api.accutechdataexchange.com/api/Hangfire/TotalJobs?date=
+        //CJ - Current Jobs - //api.accutechdataexchange.com/api/Hangfire/CurrentJobStates
+        //if (JobID == "TJ")
+        //{
+        //RecurringJob.AddOrUpdate(() => TotalJobsCall(), "0/30 * * ? * *");
+        //}
+
+        [HttpPost]
+        public async Task <IActionResult> Submit(AddJobViewModel model)
+        {
+            if (model.JobId == JobType.TotalJobs)
+            {
+                await TotalJobsCall(model.JobId);
+            }
+            else
+            {
+                await CurrentJobStatesCall(model.JobId);
+            }
+            return RedirectToActionPermanent("Index");
+        }
+        public async Task TotalJobsCall(JobType jobType)
         {
             String sDate = DateTime.Now.ToString();
             DateTime datevalue = (Convert.ToDateTime(sDate.ToString()));
@@ -56,17 +93,17 @@ namespace SystemMonitoring.Controllers
 
             string date = mn + "/" + dy + "/" + yy; 
             var apiEndpoint = "https://api.accutechdataexchange.com/api/Hangfire/TotalJobs?date=" + date;
-            var job = _apiJobFactory.CreateJob(apiEndpoint);
+            var job = _apiJobFactory.CreateJob(apiEndpoint, jobType);
             await job.Run();
         }
 
-        public async Task<YahooApiCallData> YahooData()
+        public async Task CurrentJobStatesCall(JobType jobType)
         {
-            var output = new YahooApiCallData
-            {
-                Data = await ApiCallHandler.ApiCallAsync()
-            };
-            return output;
+           
+            //string date = mn + "/" + dy + "/" + yy;
+            var apiEndpoint = "https://api.accutechdataexchange.com/api/Hangfire/CurrentJobStates";
+            var job = _apiJobFactory.CreateJob(apiEndpoint, jobType);
+            await job.Run();
         }
 
         public IActionResult Privacy()
