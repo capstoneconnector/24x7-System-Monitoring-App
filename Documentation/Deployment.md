@@ -10,5 +10,5 @@ Troubleshooting: If problems are encountered, ensure that the repository is inst
 
 How to Determine Source of Errors: Within Visual Studio, utilize debugging capabilities in order to find the file(s) that may be causing difficulties and assess from there. Along with this, if there are errors while the program is running, watch from the output source of Visual Studio and see what errors are being thrown.
 
-Most Critical Pieces: Server Connection, Database Connection, Front End CSS, API connection/endpoint
+Most Critical Pieces: Database Connection, Front End CSS, API connection/endpoint
 
