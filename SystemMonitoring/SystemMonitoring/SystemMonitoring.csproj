@@ -32,4 +32,8 @@
     <ProjectReference Include="..\SystemMonitoring.Backend\SystemMonitoring.Backend.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Data\" />
+  </ItemGroup>
+
 </Project>

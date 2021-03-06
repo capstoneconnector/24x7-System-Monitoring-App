@@ -1,0 +1,83 @@
+﻿@model SystemMonitoring.ViewModels.EditIndexViewModel
+@{
+	ViewData["Title"] = "Edit Task";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+	<h1 style="display:inline">Enter information to update:</h1>
+
+	<div id="popup" margin-bottom:15px;">
+		<form id="taskForm" asp-action="EditConfirm" asp-controller="Home" method="post">
+
+			<input type="text" style="display:none;" name="id" value="@Model.Id" />
+			<strong>Name:</strong><br />
+			<input type="text" name="name" value="@Model.Name" />
+			<br />
+			<br />
+			<strong>URL:</strong><br />
+			<input type="text" id="url" name="url" value="@Model.Url" />
+			<br />
+			<br />
+			<strong>Frequency:</strong><br />
+			<input type="text" placeholder="* * * * *" name="cronString" value="@Model.CronString" />
+			<br />
+			<br />
+			<strong>Field to check:</strong><br />
+			<div id="fields">
+			</div>
+			<br />
+			<strong>Condition to check:</strong><br />
+			<lable>Condition to check:</lable>
+			<select name="conditional" id="condit">
+				<option id="==" value="==">==</option>
+				<option id=">" value=">">></option>
+				<option id=">=" value=">=">>=</option>
+				<option id="<" value="<"><</option>
+				<option id="<=" value="<="><=</option>
+				<option id="!=" value="!=">!=</option>
+			</select>
+			<input type="text" name="value" value="@Model.Value" style="height:25px" />
+			<br />
+			<br />
+			<button type="submit" id="taskForm" form="taskForm" class="btn btn-primary">Save New Task</button>
+
+		</form>
+	</div>
+</div>
+
+<script>
+	$('#url').ready(function (e) {
+
+		var url = $("#url").val();
+
+		$.ajax({
+			type: "GET",
+			url: "/Home/AddTaskPartial",
+			data: { urlInput: url },
+			success: function (data) {
+				$("#fields").html(data);
+			},
+			error: function () {
+				$("#fields").html("Could not get fields from API entered");
+			}
+		});
+	});
+
+	$('#url').change(function (e) {
+
+		var url = $("#url").val();
+
+		$.ajax({
+			type: "GET",
+			url: "/Home/AddTaskPartial",
+			data: { urlInput: url },
+			success: function (data) {
+				$("#fields").html(data);
+			},
+			error: function () {
+				$("#fields").html("Could not get fields from API entered");
+			}
+		});
+	});
+</script>

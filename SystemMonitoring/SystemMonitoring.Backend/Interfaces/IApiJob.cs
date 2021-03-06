@@ -7,6 +7,6 @@ namespace SystemMonitoring.Backend.Interfaces
 {
     public interface IApiJob
     {
-        Task Run();
+        Task Run<T>() where T : class;
     }
 }

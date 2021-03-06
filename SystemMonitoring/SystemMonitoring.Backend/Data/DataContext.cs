@@ -13,13 +13,9 @@ namespace SystemMonitoring.Backend.Data
         {
         }
 
-        public DbSet<TestForHangfire> TestForHangFire { get; set; }
-        public DbSet<TotalJobResult> TotalJobResults { get; set; }
         public DbSet<CurrentJobResult> CurrentJobResults { get; set; }
+        public DbSet<ReoccurringJob> ReoccurringJob { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<TestForHangfire>().ToTable("TestForHangfire");
-        }
+
     }
 }

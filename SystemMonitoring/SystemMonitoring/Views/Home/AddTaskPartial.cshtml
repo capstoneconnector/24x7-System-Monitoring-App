@@ -1,0 +1,60 @@
+﻿@model SystemMonitoring.ViewModels.FieldsViewModel
+
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+@if (Model.Fields != null)
+{
+	<select name="priorityField">
+		@foreach (var field in Model.Fields.Keys)
+		{
+			<option id="@field" value="@field">@field</option>
+		}
+	</select>
+	<br />
+	<table>
+		<tr>
+			@foreach (var header in Model.Fields.Keys)
+			{
+				<th>@header</th>
+			}
+		</tr>
+		<tr>
+			@foreach (var values in Model.Fields.Values)
+			{
+				if (values == null)
+				{
+					<td>null</td>
+				}
+				else if (values.ToString().Length > 25)
+				{
+					<td>@values.ToString().Substring(0, 25) ...</td>
+				}
+				else
+				{
+					<td>@values.ToString()</td>
+				}
+			}
+		</tr>
+	</table>
+}
+else
+{
+	<p>Could not get fields from API entered</p>
+}
+
+

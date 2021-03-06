@@ -26,81 +26,48 @@ namespace SystemMonitoring.Backend.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<int>("Awaiting")
-                        .HasColumnType("integer");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("Deleted")
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ReoccurringJobId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Enqueued")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Failed")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("JobType")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Processing")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Scheduled")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Succeeded")
-                        .HasColumnType("integer");
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("CurrentJobResults");
                 });
 
-            modelBuilder.Entity("SystemMonitoring.Backend.Models.TestForHangfire", b =>
+            modelBuilder.Entity("SystemMonitoring.Backend.Models.ReoccurringJob", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<string>("Job")
+                    b.Property<string[]>("ConditionalExpression")
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("CronString")
                         .HasColumnType("text");
 
-                    b.Property<string>("RunTime")
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PriorityField")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Url")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("TestForHangfire");
-                });
-
-            modelBuilder.Entity("SystemMonitoring.Backend.Models.TotalJobResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("JobType")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TotalFailedJobs")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TotalJobs")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TotalSuccessfulJobs")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TotalJobResults");
+                    b.ToTable("ReoccurringJob");
                 });
 #pragma warning restore 612, 618
         }

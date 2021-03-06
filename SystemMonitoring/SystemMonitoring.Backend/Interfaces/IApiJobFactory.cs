@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SystemMonitoring.Backend.Enumeration;
+using SystemMonitoring.Backend.Models;
 
 namespace SystemMonitoring.Backend.Interfaces
 {
     public interface IApiJobFactory
     {
-        IApiJob CreateJob(String endpoint, JobType jobType);
+        IApiJob CurrentJob(ReoccurringJob task);
     }
 }

@@ -4,114 +4,60 @@
 
 
 }
+<style>
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		width: 20rem;
+		margin: 10px 20px 20px 10px;
+		background-color: rgb(230, 230, 230);
+	}
+	
+	.card:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+	}
 
+	.container {
+		padding: 2px 16px;
+	}
+</style>
 
 <!--Container for task columns-->
-<div class="text-center">
+<div>
 
-    <div>
-        <h1 style="display:inline">Submit a new task:</h1>
-        <button type="button" class="btn btn-secondary" style="display:inline;margin-left:8px;margin-bottom:15px;" id="addTask">+</button>
+	<h1 style="display:inline">Task</h1>
+	<br />
+	<br />
 
-        <div id="popup" style="display:none; margin-bottom:15px;">
-            <form id="taskForm" asp-action="Submit" asp-controller="Home" method="post">
+	<div class="row">
+		@foreach (var jobPanel in Model.CurrentJobs)
+		{
+			<div class="card" id=@jobPanel.Id>
+				<div class="card-body">
+					<h4 class="card-title">@jobPanel.Name</h4>
+					<p>Status: @jobPanel.Status</p>
+					<p>Last checked: @jobPanel.Date</p>
+					<a href="/Home/Delete?taskId=@jobPanel.Id" class="btn btn-secondary">Delete</a>
+					<a href="/Home/Edit?taskId=@jobPanel.ReoccurringJobId" class="btn btn-secondary">Edit</a>
+					<a href="/Home/RunOnCommand?taskId=@jobPanel.ReoccurringJobId" class="btn btn-secondary" style="float: right;">Run</a>
+				</div>
+			</div>
 
-                <label for="disName"> Select API Call </label><br />
-                <select id="jobs" name="jobId">
-                    <option value="0">Total Jobs</option>
-                    <option value="1">Current Jobs</option>
-                </select> <br />
+			if (jobPanel.Status == "Failed")
+			{
+				<script>
+					document.getElementById(@jobPanel.Id).style.backgroundColor = "tomato";
+					document.getElementById(@jobPanel.Id).style.color = "white";
+				</script>
+			}
+			else if (jobPanel.Status == "Successful")
+			{
+				<script>
+					document.getElementById(@jobPanel.Id).style.backgroundColor = "darkseagreen";
+				</script>
+			}
 
-                <br /> <button type="submit" id="submitNewTask" form="taskForm" class="btn btn-primary">Save New Task</button>
+		}
+	</div>
 
-            </form>
-        </div>
-    </div>
-    
-
-    <div class="card" style="width: 28rem; display: inline-block;">
-        <div class="card-header">
-            <h1 style="display:inline">Total Job Tasks</h1>
-            
-
-        </div>
-        <ul class="list-group list-group-flush" id="taskList">
-
-            @foreach (var jobPanel in Model.TotalJobResults)
-            {
-                <li class="list-group-item">
-                    Id: @jobPanel.Id 
-                    <br /> TotalJobs : @jobPanel.TotalJobs 
-                    <br /> TotalFailedJobs: @jobPanel.TotalFailedJobs
-                   </li>
-            }
-
-        </ul>
-
-    </div>
-
-
-        <div class="card" style="width: 28rem; display: inline-block;" >
-            <div class="card-header">
-                <h1 style="display:inline; line-height: 60px">Current Job Tasks</h1>
-
-                <ul class="list-group list-group-flush" id="taskList" style="overflow-y:scroll; max-height:49vh">
-
-                    @foreach (var jobPanel in Model.CurrentJobResult)
-                    {
-                        <li class="list-group-item">
-                            Id: @jobPanel.Id 
-                            <br /> TotalScheduledJobs: @jobPanel.Scheduled 
-                            <br /> TotalEnqueuedJobs : @jobPanel.Enqueued 
-                            <br /> TotalProcessingJobs: @jobPanel.Processing 
-                            <br /> TotalSucceededJobs: @jobPanel.Succeeded 
-                            <br /> TotalFailedJobs: @jobPanel.Failed 
-                        </li>
-                    }
-
-                </ul>
-
-            </div>
-        </div>
-
-        </div> <!--End of card container-->
-
-        <script>
-
-            var returnedData;
-
-            $(document).ready(function () {
-                $.ajax({
-                    url: " https://api.covidtracking.com/v1/us/current.json",
-                    type: "GET",
-                    contenttype: "application/json; charset=utf-8",
-                    data: { show: true },
-                    success: function (data) {
-                        returnedData = data;
-                    }
-                }).done(function () {
-                    $("#updateMe").text("API Test: " + returnedData[0].date);
-
-                })
-            });
-
-            $("#addTask").click(function () {
-
-                if ($("#addTask").text == "+") {
-                    $("#addTask").text = "-";
-                    $("#popup").toggle();
-                } else {
-                    $('#addTask').text = "+";
-                    $('#popup').toggle();
-                }
-            });
-
-            $('#submitNewTask').click(function () {
-                $('#popup').toggle();
-
-            });
-
-
-
-
-        </script>
+</div> <!--End of card container-->

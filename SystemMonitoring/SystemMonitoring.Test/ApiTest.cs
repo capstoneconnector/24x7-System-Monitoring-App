@@ -6,7 +6,6 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemMonitoring.Backend.Data;
-using SystemMonitoring.Backend.Enumeration;
 using SystemMonitoring.Backend.Factories;
 using SystemMonitoring.Backend.Interfaces;
 using SystemMonitoring.Backend.Jobs;
@@ -15,7 +14,7 @@ using SystemMonitoring.ViewModels;
 
 namespace SystemMonitoring.Test
 {
-    [TestClass]
+    /*[TestClass]
     public class ApiTest
     {
         private DataContext _dataContext;
@@ -31,5 +30,5 @@ namespace SystemMonitoring.Test
             Assert.IsTrue(api_job is TotalApiJob);
             Assert.IsNotNull(api_job);
         }
-    }
+    }*/
 }

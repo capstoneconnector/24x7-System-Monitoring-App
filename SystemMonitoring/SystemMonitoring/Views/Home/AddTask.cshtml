@@ -1,0 +1,72 @@
+﻿@model SystemMonitoring.ViewModels.HomeIndexViewModel
+@{
+	ViewData["Title"] = "Add Task";
+}
+<h1>@ViewData["AddTask"]</h1>
+
+<div>
+	<h1 style="display:inline">Submit a new task:</h1>
+
+	<div id="popup" margin-bottom:15px;">
+		<form id="taskForm" asp-action="Submit" asp-controller="Home" method="post">
+
+			<label for="disName"> Select API Call </label><br />
+			<br />
+			<br />
+			<lable>Name:</lable>
+			<br />
+			<input type="text" name="name" />
+			<br />
+			<br />
+			<lable>URL:</lable>
+			<br />
+			<input type="text" id="url" name="url" />
+			<br />
+			<br />
+			<lable>Frequency:</lable>
+			<br />
+			<input type="text" placeholder="* * * * *" name="cronString" />
+			<br />
+			<br />
+			<lable>Field to check:</lable>
+			<div id="fields">
+			</div>
+			<br />
+			<lable>Condition to check:</lable>
+			<br />
+			<select name="conditional">
+				<option value="==">==</option>
+				<option value=">">></option>
+				<option value=">=">>=</option>
+				<option value="<"><</option>
+				<option value="<="><=</option>
+				<option value="!=">!=</option>
+			</select>
+			<input type="text" name="value" value="" style="height:25px" />
+			<br />
+			<br />
+			<br />
+			<button type="submit" id="submitNewTask" form="taskForm" class="btn btn-primary">Save New Task</button>
+
+		</form>
+	</div>
+</div>
+
+<script>
+	$('#url').change(function (e) {
+
+		var url = $("#url").val();
+
+		$.ajax({
+			type: "GET",
+			url: "/Home/AddTaskPartial",
+			data: { urlInput: url },
+			success: function (data) {
+				$("#fields").html(data);
+			},
+			error: function () {
+				$("#fields").html("Could not get fields from API entered");
+			}
+		});
+	});
+</script>

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using SystemMonitoring.Backend.Data;
-using SystemMonitoring.Backend.Enumeration;
 using SystemMonitoring.Backend.Interfaces;
 using SystemMonitoring.Backend.Jobs;
+using SystemMonitoring.Backend.Models;
 
 namespace SystemMonitoring.Backend.Factories
 {
@@ -17,18 +17,9 @@ namespace SystemMonitoring.Backend.Factories
             _dataContext = dataContext;
         }
 
-        public IApiJob CreateJob(string endpoint, JobType jobType)
+        public IApiJob CurrentJob(ReoccurringJob task)
         {
-            switch (jobType)
-            {
-                case JobType.CurrentJobs:
-                    return new CurrentApiJob(_dataContext, endpoint);
-                case JobType.TotalJobs:
-                    return new TotalApiJob(_dataContext, endpoint);
-                default:
-                    return null;
-            }
-            
+            return new CurrentApiJob(_dataContext, task);
         }
     }
 }
