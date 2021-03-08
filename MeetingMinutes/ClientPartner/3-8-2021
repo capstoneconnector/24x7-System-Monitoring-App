@@ -1,0 +1,38 @@
+# ClientPartner Meeting on 3/8/2021
+
+## Meeting Start Time
+
+**2021/3/8/1:30** 
+
+## Meeting End Time
+
+**2021/2/8/2:00**
+
+## Location/Medium
+
+Teams
+
+## Present
+
+Chase,
+Nathaniel,
+Luke,
+Trey,
+Dave
+
+## Minute Recorder
+
+Nathaniel
+
+## Topics Discussed
+
+-	Showing client new software iteration
+-   Recieved feedback
+-   Discussed future goals
+
+## Things Clarified
+
+-	The User Interface is a lot more user friendly and is exactly what is on the track for what was envisioned from the start
+- Look into getting Authentification Set up for certain parts of the API calls in order to receive information that we may need from their systems
+- Change up the infomration that can be tracked to include dateTime to see if the date changed in an API call. 
+- Information will be given soon on Mailgun and Twilio in the coming days. 
