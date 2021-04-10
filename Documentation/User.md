@@ -33,8 +33,16 @@ If a user has installed postgreSQL and pgAdmin they will be able to access pgAdm
  
 9) The home page displays all the currently running tasks as well as their status. You also have the option to delete, edit, or run any of the tasks.
 
-![alt text](https://github.com/Hjwallace/24x7-System-Monitoring-App/blob/master/Auxiliary%20Files/home.png)
+![alt text](https://github.com/Hjwallace/24x7-System-Monitoring-App/blob/master/Auxiliary%20Files/HomeScreen.PNG)
 
-10) To add a new task click on ‘Add Task’ in the top navigation bar. In the add task page you can enter the name, url of the api endpoint, cron string for how often you want the job to be repeated, the field you want to check, and the condition the field should meet. Then click save new task to add it.
+10) To add a new task click on ‘Add Task’ in the top navigation bar. In the add task page you can enter the name, url of the api endpoint, cron string for how often you want the job to be repeated, the field you want to check, and the condition the field should meet. You also can create a new group and then add that notification group for when a tasks fails. It will then be able to know what group to notifiy. Then click save new task to add it.
 
-![alt text](https://github.com/Hjwallace/24x7-System-Monitoring-App/blob/master/Auxiliary%20Files/add.png)
+![alt text](https://github.com/Hjwallace/24x7-System-Monitoring-App/blob/master/Auxiliary%20Files/AddTask.PNG)
+
+11) If you want to edit a task to be able to change information on what is being tested or when, you can click the edit button on a task and it will take you to a page with that information already plugged in. 
+
+![alt text](https://github.com/Hjwallace/24x7-System-Monitoring-App/blob/master/Auxiliary%20Files/EditTask.PNG)
+
+12) Another option at the top of the page is an add user page that is used to add contact information for users that would need to be notified within the system. Here you will enter basic info like name, phone number email and what contact group they are in. 
+
+![alt text](https://github.com/Hjwallace/24x7-System-Monitoring-App/blob/master/Auxiliary%20Files/AddUser.PNG)
