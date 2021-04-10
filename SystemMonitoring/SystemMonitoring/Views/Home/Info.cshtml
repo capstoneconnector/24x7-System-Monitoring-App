@@ -1,0 +1,63 @@
+﻿@model SystemMonitoring.ViewModels.HistoryViewModel
+@{
+	ViewData["Title"] = "Task Info";
+}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+<h1>@ViewData["Title"]</h1>
+
+<div id="info">
+	
+</div>
+
+<h1>Run History</h1>
+<div style="border: 1px solid black; padding: 10px;">
+	<table id="history_table" class="display">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Status</th>
+				<th>Time ran</th>
+			</tr>
+		</thead>
+		<tbody id="history_body">
+			@foreach (var run in Model.JobHistories)
+			{
+				<tr>
+					<td>@run.Id</td>
+					<td>@run.Status</td>
+					<td>@run.Date</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<span id="error"></span>
+</div>
+
+<script>
+	$(document).ready(function (e) {
+
+		var id = @Model.JobHistories.FirstOrDefault().ReoccurringJobId;
+
+		$.ajax({
+			type: "GET",
+			url: "/Home/TaskInfo",
+			data: { taskId: id },
+			success: function (data) {
+				$("#info").html(data);
+			},
+			error: function () {
+				$("#info").html("Could not find the information for this task");
+			}
+		});
+	});
+</script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+<script>
+	$(document).ready(function () {
+		$('#history_table').DataTable();
+	});
+</script>

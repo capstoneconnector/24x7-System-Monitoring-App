@@ -44,21 +44,15 @@ namespace SystemMonitoring.Controllers
             foreach (var task in reoccuringlist)
             {
                 RecurringJob.AddOrUpdate(task.Id.ToString(), () => RunTask(task), task.CronString);
-                if (_dataContext.CurrentJobResults.FirstOrDefault(job => job.ReoccurringJobId == task.Id) == null)
-                {
-                    var job = _apiJobFactory.CurrentJob(task);
-                    await job.Run<TotalJobsApiResponse>();
-                }
             }
 
             IEnumerable<CurrentJobResult> currentJobResults = _dataContext.CurrentJobResults.AsEnumerable<CurrentJobResult>();
 
             var viewModel = new HomeIndexViewModel
             {
-                CurrentJobs = currentJobResults,
+                CurrentJobs = currentJobResults.OrderBy(job => job.Name),
                 ReoccurringJobs = reoccuring,
             };
-
             return View(viewModel);
         }
 
@@ -82,16 +76,20 @@ namespace SystemMonitoring.Controllers
             {
                 model.Value = "";
             }
+
+            var newTask = new ReoccurringJob
+            {
+                Name = model.Name,
+                Url = model.Url,
+                CronString = model.CronString,
+                PriorityField = model.PriorityField,
+                ConditionalExpression = new string[] { model.Conditional.ToString(), model.Value.ToString() },
+                ContactGroup_Id = model.ContactGroupId,
+            };
+
             try
             {
-                _dataContext.ReoccurringJob.Add(new ReoccurringJob
-                {
-                    Name = model.Name,
-                    Url = model.Url,
-                    CronString = model.CronString,
-                    PriorityField = model.PriorityField,
-                    ConditionalExpression = new string[] { model.Conditional.ToString(), model.Value.ToString() },
-                });
+                _dataContext.ReoccurringJob.Add(newTask);
             }
             catch (Exception e)
             {
@@ -100,11 +98,28 @@ namespace SystemMonitoring.Controllers
 
             await _dataContext.SaveChangesAsync();
 
+            _dataContext.CurrentJobResults.Add(new CurrentJobResult {
+                Name = newTask.Name,
+                ReoccurringJobId = newTask.Id,
+                Status = "Unchecked",
+                Date = DateTime.MinValue,
+            });
+
+            await _dataContext.SaveChangesAsync();
         }
 
         public IActionResult AddTask()
         {
             return View();
+        }
+
+        public IActionResult Info(int taskId)
+        {
+            HistoryViewModel history = new HistoryViewModel
+            {
+                JobHistories = _dataContext.JobHistories.Where(job => job.ReoccurringJobId == taskId)
+            };
+            return View(history);
         }
 
         public async Task<IActionResult> AddTaskPartial(string urlInput)
@@ -116,6 +131,25 @@ namespace SystemMonitoring.Controllers
             return PartialView(fields);
         }
 
+        public IActionResult TaskInfo(int taskId)
+        {
+            var asset = _dataContext.ReoccurringJob.FirstOrDefault(e => e.Id == taskId);
+
+            var viewModel = new EditIndexViewModel
+
+            {
+                Id = asset.Id,
+                Name = asset.Name,
+                Url = asset.Url,
+                CronString = asset.CronString,
+                PriorityField = asset.PriorityField,
+                Conditional = asset.ConditionalExpression[0],
+                Value = asset.ConditionalExpression[1],
+
+            };
+
+            return PartialView(viewModel);
+        }
 
         public IActionResult Edit(int taskId)
         {
@@ -131,6 +165,7 @@ namespace SystemMonitoring.Controllers
                 PriorityField = asset.PriorityField,
                 Conditional = asset.ConditionalExpression[0],
                 Value = asset.ConditionalExpression[1],
+                ContactGroupId = asset.ContactGroup_Id,
 
             };
 
@@ -149,6 +184,7 @@ namespace SystemMonitoring.Controllers
             _dataContext.ReoccurringJob.Find(model.Id).CronString = model.CronString;
             _dataContext.ReoccurringJob.Find(model.Id).PriorityField = model.PriorityField;
             _dataContext.ReoccurringJob.Find(model.Id).ConditionalExpression = new string[] { model.Conditional.ToString(), model.Value.ToString() };
+            _dataContext.ReoccurringJob.Find(model.Id).ContactGroup_Id = model.ContactGroupId;
             _dataContext.CurrentJobResults.FirstOrDefault(e => e.ReoccurringJobId == model.Id).Name = model.Name;
 
             await _dataContext.SaveChangesAsync();
@@ -215,6 +251,78 @@ namespace SystemMonitoring.Controllers
             }
             else
                 return null;
+        }
+
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+
+        public void AddNewGroup(string groupName)
+        {
+
+            try
+            {
+                _dataContext.ContactGroups.Add(new ContactGroup
+                {
+                    Name = groupName,
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            _dataContext.SaveChanges();
+        }
+
+        public IActionResult AddUserPartial(string urlInput)
+        {
+            ContactGroupsViewModel cGroups = new ContactGroupsViewModel
+            {
+                Groups = _dataContext.ContactGroups.AsEnumerable<ContactGroup>(),
+            };
+            return PartialView(cGroups);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SubmitUser(NewUserViewModel model)
+        {
+            await AddNewUser(model);
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task AddNewUser(NewUserViewModel model)
+        {
+
+            var info = new ContactInfo
+            {
+                PhoneNumber = model.Phone,
+                Email = model.Email,
+            };
+
+            _dataContext.ContactInfos.Add(info);
+
+            await _dataContext.SaveChangesAsync();
+
+            var contactInfoId = info.Id;
+
+            var user = new User { Name = model.Name, ContactInfo_Id = contactInfoId, };
+
+            _dataContext.Users.Add(user);
+
+            await _dataContext.SaveChangesAsync();
+
+            _dataContext.Contacts.Add(new Contact
+            {
+                User_Id = user.Id,
+                ContactGroup_Id = model.ContactGroupId,
+                ContactMethod = model.ContactMethod,
+            });
+
+            await _dataContext.SaveChangesAsync();
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,6 +1,6 @@
 ﻿@model SystemMonitoring.ViewModels.HomeIndexViewModel
 @{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 
 
 }
@@ -12,10 +12,10 @@
 		margin: 10px 20px 20px 10px;
 		background-color: rgb(230, 230, 230);
 	}
-	
-	.card:hover {
-		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
-	}
+
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+		}
 
 	.container {
 		padding: 2px 16px;
@@ -34,9 +34,20 @@
 		{
 			<div class="card" id=@jobPanel.Id>
 				<div class="card-body">
+					<a href="/Home/Info?taskId=@jobPanel.ReoccurringJobId" id="@jobPanel.Id-info" class="btn btn-secondary" style="float: right; font-size: 1.25em;">
+						&#9432;
+					</a>
 					<h4 class="card-title">@jobPanel.Name</h4>
 					<p>Status: @jobPanel.Status</p>
-					<p>Last checked: @jobPanel.Date</p>
+					<p>Last checked: 
+					@if (jobPanel.Date == DateTime.MinValue)
+					{
+						@Html.DisplayText("Never");
+					} else
+					{ 
+						@jobPanel.Date
+					}
+					</p>
 					<a href="/Home/Delete?taskId=@jobPanel.Id" class="btn btn-secondary">Delete</a>
 					<a href="/Home/Edit?taskId=@jobPanel.ReoccurringJobId" class="btn btn-secondary">Edit</a>
 					<a href="/Home/RunOnCommand?taskId=@jobPanel.ReoccurringJobId" class="btn btn-secondary" style="float: right;">Run</a>
@@ -55,6 +66,12 @@
 				<script>
 					document.getElementById(@jobPanel.Id).style.backgroundColor = "darkseagreen";
 				</script>
+			}
+			else if (jobPanel.Status == "Unchecked")
+			{
+	<script>
+					document.getElementById("@jobPanel.Id-info").style.display = "none";
+	</script>
 			}
 
 		}

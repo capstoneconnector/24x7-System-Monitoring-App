@@ -8314,19 +8314,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hunte\\.nuget\\packages\\": {}
+    "C:\\Users\\chase\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
+      "projectUniqueName": "C:\\Users\\chase\\Source\\Repos\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
       "projectName": "SystemMonitoring",
-      "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
-      "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\obj\\",
+      "projectPath": "C:\\Users\\chase\\Source\\Repos\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\SystemMonitoring.csproj",
+      "packagesPath": "C:\\Users\\chase\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chase\\Source\\Repos\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chase\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8340,8 +8340,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
-              "projectPath": "C:\\Users\\hunte\\OneDrive\\Desktop\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj"
+            "C:\\Users\\chase\\Source\\Repos\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj": {
+              "projectPath": "C:\\Users\\chase\\Source\\Repos\\bsu.247monitoring\\SystemMonitoring\\SystemMonitoring.Backend\\SystemMonitoring.Backend.csproj"
             }
           }
         }
@@ -8435,7 +8435,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

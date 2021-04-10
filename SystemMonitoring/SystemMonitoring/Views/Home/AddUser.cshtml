@@ -1,0 +1,96 @@
+﻿@{
+	ViewData["Title"] = "Add User";
+}
+<h1>@ViewData["AddUser"]</h1>
+
+<div>
+	<h1 style="display:inline">Create a new user:</h1>
+
+	<div id="popup" margin-bottom:15px;">
+		<form id="taskForm" asp-action="SubmitUser" asp-controller="Home" method="post">
+			<lable>Name:</lable>
+			<br />
+			<input type="text" name="name" />
+			<br />
+			<br />
+			<lable>Phone Number:</lable>
+			<br />
+			<input type="text" name="phone" />
+			<br />
+			<br />
+			<lable>Email Address:</lable>
+			<br />
+			<input type="text" name="email" />
+			<br />
+			<br />
+			<lable>Contact Group:</lable>
+			<div id="groups">
+
+			</div>
+			<input id="show" type="button" value="Create new contact group" onclick="showCreate()" />
+			<br />
+			<br />
+			<label>preferred Contact Method</label>
+			<select name="contactMethod">
+				<option>Text</option>
+				<option>Email</option>
+			</select>
+			<br />
+			<br />
+			<button type="submit" id="submitUser" form="taskForm" class="btn btn-primary">Add User</button>
+		</form>
+
+		<br />
+		<br />
+		<div id="newGroup" class="mb-5" style="display:none">
+			<lable>New Group Name:</lable>
+			<br />
+			<input type="text" id="groupName" />
+			<br />
+			<input id="addGroup" type="button" value="Add Contact Group" />
+		</div>
+	</div>
+</div>
+
+<script>
+	$('#addGroup').click(function () {
+
+		var name = $("#groupName").val();
+
+		$.ajax({
+			type: "POST",
+			url: "/Home/AddNewGroup",
+			data: { groupName: name },
+			success: function (data) {
+				alert('Contact group successfully created');
+				GetGroups();
+				hideCreate();
+			},
+			error: function () {
+				alert('Could not create group');
+			}
+		});
+	});
+
+	$('#groups').ready(function (e) {
+			GetGroups();
+	});
+
+	function GetGroups() {
+		$.ajax({
+			type: "GET",
+			url: "/Home/AddUserPartial",
+			success: function (data) {
+			$("#groups").html(data);
+			}
+		});
+	}
+
+	function showCreate() {
+		document.getElementById("newGroup").style.display = "block";
+	}
+
+	function hideCreate() {
+		document.getElementById("newGroup").style.display = "none";
+	}
+</script>

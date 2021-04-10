@@ -1,0 +1,28 @@
+﻿@model SystemMonitoring.ViewModels.EditIndexViewModel
+
+<style>
+	td {
+		text-indent:40px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+<table style="border: 1px solid black; width: 100%">
+	<tbody>
+		<tr>
+			<td><b>Task name:</b> @Model.Name</td>
+		</tr>
+		<tr>
+			<td><b>API endpoint:</b> @Model.Url</td>
+		</tr>
+		<tr>
+			<td><b>Ocurrence:</b> @Model.CronString</td>
+		</tr>
+		<tr>
+			<td><b>Condition checked:</b> @Model.PriorityField @Model.Conditional @Model.Value</td>
+		</tr>
+	</tbody>
+</table>

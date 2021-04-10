@@ -10,22 +10,200 @@
 	<div id="popup" margin-bottom:15px;">
 		<form id="taskForm" asp-action="Submit" asp-controller="Home" method="post">
 
-			<label for="disName"> Select API Call </label><br />
+			<label for="disName"> Select API Call </label>
+			<br />
+			<div class="row">
+				<div class="box" style="padding-left:15px">
+					<lable>Name:</lable>
+					<br />
+					<input type="text" name="name" />
+				</div>
+				<div class="box" style="padding-left:15px">
+					<lable>URL:</lable>
+					<br />
+					<input type="text" id="url" name="url" />
+				</div>
+			</div>
 			<br />
 			<br />
-			<lable>Name:</lable>
+			<label><b>Cron String Generation:</b></label>
 			<br />
-			<input type="text" name="name" />
-			<br />
-			<br />
-			<lable>URL:</lable>
-			<br />
-			<input type="text" id="url" name="url" />
-			<br />
+			<div class="row" onloadstart="autoFill()">
+				<div class="box" style="padding-left:15px">
+					<label>Selecting Minute</label><br />
+					<select name="minute" id="minute" multiple="multiple" onclick="autoFill()">
+						<option value="*" selected>Every Minute</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45">45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						<option value="51">51</option>
+						<option value="52">52</option>
+						<option value="53">53</option>
+						<option value="54">54</option>
+						<option value="55">55</option>
+						<option value="56">56</option>
+						<option value="57">57</option>
+						<option value="58">58</option>
+						<option value="59">59</option>
+					</select>
+				</div>
+				<div class="box" style="padding-left:15px">
+					<label>Selecting Hour</label><br />
+					<select name="hour" id="hour" multiple="multiple" onclick="autoFill()">
+						<option value="*" selected>Every Hour</option>
+						<option value="0">12 Midnight</option>
+						<option value="1">1 AM</option>
+						<option value="2">2 AM</option>
+						<option value="3">3 AM</option>
+						<option value="4">4 AM</option>
+						<option value="5">5 AM</option>
+						<option value="6">6 AM</option>
+						<option value="7">7 AM</option>
+						<option value="8">8 AM</option>
+						<option value="9">9 AM</option>
+						<option value="10">10 AM</option>
+						<option value="11">11 AM</option>
+						<option value="12">12 Noon</option>
+						<option value="13">1 PM</option>
+						<option value="14">2 PM</option>
+						<option value="15">3 PM</option>
+						<option value="16">4 PM</option>
+						<option value="17">5 PM</option>
+						<option value="18">6 PM</option>
+						<option value="19">7 PM</option>
+						<option value="20">8 PM</option>
+						<option value="21">9 PM</option>
+						<option value="22">10 PM</option>
+						<option value="23">11 PM</option>
+					</select>
+				</div>
+				<div class="box" style="padding-left:15px">
+					<label>Selecting Day</label><br />
+					<select name="day" id="day" multiple="multiple" onclick="autoFill()">
+						<option value="*" selected>Every Day</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+					</select>
+				</div>
+				<div class="box" style="padding-left:15px">
+					<label>Selecting Month</label><br />
+					<select name="month" id="month" multiple="multiple" onclick="autoFill()">
+						<option value="*" selected>Every Month</option>
+						<option value="1">January</option>
+						<option value="2">February</option>
+						<option value="3">March</option>
+						<option value="4">April</option>
+						<option value="5">May</option>
+						<option value="6">June</option>
+						<option value="7">July</option>
+						<option value="8">Augest</option>
+						<option value="9">September</option>
+						<option value="10">October</option>
+						<option value="11">November</option>
+						<option value="12">December</option>
+					</select>
+				</div>
+				<div class="box" style="padding-left:15px">
+					<label>Selecting Weekday</label><br />
+					<select name="weekday" id="weekday" multiple="multiple" onclick="autoFill()">
+						<option value="*" selected>Every Weekday</option>
+						<option value="0">Sunday</option>
+						<option value="1">Monday</option>
+						<option value="2">Tuesday</option>
+						<option value="3">Wednesday</option>
+						<option value="4">Thursday</option>
+						<option value="5">Friday</option>
+						<option value="6">Saturday</option>
+					</select>
+				</div>
+			</div>
 			<br />
 			<lable>Frequency:</lable>
 			<br />
-			<input type="text" placeholder="* * * * *" name="cronString" />
+			<input type="text" id="cron" name="cronString" value="* * * * *" readonly="readonly" />
+			<script type="text/javascript">
+				function autoFill() {
+					document.getElementById('cron').value = document.getElementById('minute').value + " " + document.getElementById('hour').value + " " + document.getElementById('day').value + " " + document.getElementById('month').value + " " + document.getElementById('weekday').value
+				}
+			</script>
 			<br />
 			<br />
 			<lable>Field to check:</lable>
@@ -45,10 +223,27 @@
 			<input type="text" name="value" value="" style="height:25px" />
 			<br />
 			<br />
+			<lable>Contact Group:</lable>
+			<div id="groups">
+
+			</div>
+			<input id="show" type="button" value="Create new contact group" onclick="showCreate()" />
+			<br />
 			<br />
 			<button type="submit" id="submitNewTask" form="taskForm" class="btn btn-primary">Save New Task</button>
 
 		</form>
+
+		<br />
+		<br />
+		<div id="newGroup" class="mb-5" style="display:none">
+			<lable>New Group Name:</lable>
+			<br />
+			<input type="text" id="groupName" />
+			<br />
+			<input id="addGroup" type="button" value="Add Contact Group" />
+		</div>
+
 	</div>
 </div>
 
@@ -69,4 +264,45 @@
 			}
 		});
 	});
+
+	$('#addGroup').click(function () {
+
+		var name = $("#groupName").val();
+
+		$.ajax({
+			type: "POST",
+			url: "/Home/AddNewGroup",
+			data: { groupName: name },
+			success: function (data) {
+				alert('Contact group successfully created');
+				GetGroups();
+				hideCreate();
+			},
+			error: function () {
+				alert('Could not create group');
+			}
+		});
+	});
+
+	$('#groups').ready(function (e) {
+		GetGroups();
+	});
+
+	function GetGroups() {
+		$.ajax({
+			type: "GET",
+			url: "/Home/AddUserPartial",
+			success: function (data) {
+				$("#groups").html(data);
+			}
+		});
+	}
+
+	function showCreate() {
+		document.getElementById("newGroup").style.display = "inherit";
+	}
+
+	function hideCreate() {
+		document.getElementById("newGroup").style.display = "none";
+	}
 </script>

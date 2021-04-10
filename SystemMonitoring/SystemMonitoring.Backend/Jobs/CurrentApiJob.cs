@@ -50,8 +50,8 @@ namespace SystemMonitoring.Backend.Jobs
                     conditionalExpression = GetExpressionString(_task.ConditionalExpression[1], _task.ConditionalExpression[0])
                     .Compile()(value.ToString());
                 }
-                
-                
+
+
                 if (conditionalExpression)
                 {
                     status = "Successful";
@@ -76,6 +76,14 @@ namespace SystemMonitoring.Backend.Jobs
                             Status = status,
                         });
                     }
+
+                    _dataContext.JobHistories.Add(new JobHistory
+                    {
+                        Date = DateTime.Now,
+                        ReoccurringJobId = _task.Id,
+                        Name = _task.Name,
+                        Status = status,
+                    });
                 }
                 catch (Exception e)
                 {

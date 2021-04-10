@@ -15,6 +15,11 @@ namespace SystemMonitoring.Backend.Data
 
         public DbSet<CurrentJobResult> CurrentJobResults { get; set; }
         public DbSet<ReoccurringJob> ReoccurringJob { get; set; }
+        public DbSet<JobHistory> JobHistories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<ContactInfo> ContactInfos { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ContactGroup> ContactGroups { get; set; }
 
 
     }

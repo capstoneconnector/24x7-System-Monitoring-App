@@ -1,0 +1,15 @@
+﻿@model SystemMonitoring.ViewModels.ContactGroupsViewModel
+
+@if (Model.Groups != null)
+{
+	<select name="contactGroupId">
+		@foreach (var group in Model.Groups)
+		{
+			<option id="@group.Id" value="@group.Id">@group.Name</option>
+		}
+	</select>
+}
+else
+{
+	<p>No contact groups found</p>
+}

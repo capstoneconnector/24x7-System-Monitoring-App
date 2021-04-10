@@ -15,6 +15,7 @@ namespace SystemMonitoring.ViewModels
         public string PriorityField { get; set; }
         public string Conditional { get; set; }
         public string Value { get; set; }
+        public int ContactGroupId { get; set; }
 
     }
 }

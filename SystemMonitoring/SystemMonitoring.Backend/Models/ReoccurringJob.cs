@@ -12,6 +12,8 @@ namespace SystemMonitoring.Backend.Models
         public string CronString { get; set; }
         public string PriorityField { get; set; }
         public string[] ConditionalExpression { get; set; }
+        public bool AlertSent { get; set; }
+        public int ContactGroup_Id { get; set; }
 
     }
 }
