@@ -308,16 +308,18 @@ namespace SystemMonitoring.Controllers
 
             var contactInfoId = info.Id;
 
-            var user = new User { Name = model.Name, ContactInfo_Id = contactInfoId, };
+            var user = new User { Name = model.Name, ContactInfo = info, };
 
             _dataContext.Users.Add(user);
 
             await _dataContext.SaveChangesAsync();
 
+            ContactGroup group = _dataContext.ContactGroups.FirstOrDefault(e => e.Id == model.ContactGroupId);
+
             _dataContext.Contacts.Add(new Contact
             {
-                User_Id = user.Id,
-                ContactGroup_Id = model.ContactGroupId,
+                User = user,
+                ContactGroup = group,
                 ContactMethod = model.ContactMethod,
             });
 

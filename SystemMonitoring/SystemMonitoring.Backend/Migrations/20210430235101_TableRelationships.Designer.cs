@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SystemMonitoring.Backend.Data;
@@ -9,9 +10,10 @@ using SystemMonitoring.Backend.Data;
 namespace SystemMonitoring.Backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210430235101_TableRelationships")]
+    partial class TableRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,13 +28,19 @@ namespace SystemMonitoring.Backend.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<int>("ContactGroupId")
+                    b.Property<int?>("ContactGroupId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ContactGroup_Id")
                         .HasColumnType("integer");
 
                     b.Property<string>("ContactMethod")
                         .HasColumnType("text");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("User_Id")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -165,7 +173,10 @@ namespace SystemMonitoring.Backend.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<int>("ContactInfoId")
+                    b.Property<int?>("ContactInfoId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ContactInfo_Id")
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
@@ -182,15 +193,11 @@ namespace SystemMonitoring.Backend.Migrations
                 {
                     b.HasOne("SystemMonitoring.Backend.Models.ContactGroup", "ContactGroup")
                         .WithMany("Contacts")
-                        .HasForeignKey("ContactGroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ContactGroupId");
 
                     b.HasOne("SystemMonitoring.Backend.Models.User", "User")
                         .WithMany("Contacts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("ContactGroup");
 
@@ -201,9 +208,7 @@ namespace SystemMonitoring.Backend.Migrations
                 {
                     b.HasOne("SystemMonitoring.Backend.Models.ContactInfo", "ContactInfo")
                         .WithMany("Users")
-                        .HasForeignKey("ContactInfoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ContactInfoId");
 
                     b.Navigation("ContactInfo");
                 });

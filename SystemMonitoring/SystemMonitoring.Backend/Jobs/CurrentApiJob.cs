@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Mail;
 using System.Text.Json;
 using System.Threading.Tasks;
 using SystemMonitoring.Backend.Data;
@@ -55,6 +57,48 @@ namespace SystemMonitoring.Backend.Jobs
                 if (conditionalExpression)
                 {
                     status = "Successful";
+                    var task = _dataContext.ReoccurringJob.FirstOrDefault(e => e.Id == _task.Id);
+                    task.AlertSent = false;
+                    _dataContext.SaveChanges();
+                }
+                else if (_task.AlertSent == false)
+                {
+
+                    ContactGroup group = _dataContext.ContactGroups
+                        .Include(e => e.Contacts)
+                        .ThenInclude(e => e.User)
+                        .ThenInclude(e => e.ContactInfo)
+                        .FirstOrDefault(e => e.Id == _task.ContactGroup_Id);
+
+                    System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+                    foreach (var contact in group.Contacts)
+                    {
+                        mail.To.Add(contact.User.ContactInfo.Email);
+                    }
+                    mail.From = new MailAddress("24x7SystemMonitoring@gmail.com", "24x7 System Monitoring", System.Text.Encoding.UTF8);
+                    mail.Subject = "Task " + _task.Name + " has failed";
+                    mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                    mail.Body = "We found a error occuring in the " + _task.Name + " task at " + DateTime.UtcNow.ToString() + ". Please log on to check the error";
+                    mail.BodyEncoding = System.Text.Encoding.UTF8;
+                    mail.IsBodyHtml = true;
+                    mail.Priority = MailPriority.High;
+                    SmtpClient smtp_client = new SmtpClient();
+                    smtp_client.Credentials = new System.Net.NetworkCredential("24x7SystemMonitoring@gmail.com", "Plant123");
+                    smtp_client.Port = 587;
+                    smtp_client.Host = "smtp.gmail.com";
+                    smtp_client.EnableSsl = true;
+                    try
+                    {
+                        smtp_client.Send(mail);
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    var task = _dataContext.ReoccurringJob.FirstOrDefault(e => e.Id == _task.Id);
+                    task.AlertSent = true;
+                    _dataContext.SaveChanges();
+
                 }
 
                 try
